@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_act_background"
+
+    tools:context=".MainActivity">
+
+
+
+    <TextView
+        android:id="@+id/friends_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="cursive"
+        android:textStyle="bold"
+        android:text="Friends"
+        android:textColor="@color/white"
+        android:textSize="38sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/user_coins_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="12dp"
+        android:fontFamily="@font/roboto"
+        android:background="@drawable/main_activity_tv_drawables"
+        android:drawableRight="@drawable/coin"
+        android:padding="6dp"
+        android:text="You have - 50 "
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/friends_logo"
+        app:layout_constraintEnd_toStartOf="@+id/see_ads_btn"
+        app:layout_constraintTop_toTopOf="@+id/friends_logo"
+        app:layout_constraintVertical_bias="0.4" />
+
+    <TextView
+        android:id="@+id/see_ads_btn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/main_activity_tv_drawables"
+        android:drawableRight="@drawable/paid"
+        android:padding="6dp"
+        android:text=""
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/user_coins_tv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/user_coins_tv"
+        app:layout_constraintVertical_bias="0.647" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/radar_animation"
+        android:layout_width="350dp"
+        android:layout_height="350dp"
+        app:lottie_rawRes="@raw/radar_anime"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/friends_logo"
+        android:layout_marginTop="30dp"
+        app:lottie_autoPlay="true"
+        android:visibility="visible"
+        app:lottie_loop="true"
+        />
+
+    <ProgressBar
+        android:id="@+id/progress_loading"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/profile_image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/user"
+        app:layout_constraintStart_toStartOf="@id/radar_animation"
+        app:layout_constraintEnd_toEndOf="@id/radar_animation"
+        app:layout_constraintTop_toTopOf="@id/radar_animation"
+        app:layout_constraintBottom_toBottomOf="@id/radar_animation"
+        app:civ_border_width="2dp"
+        app:civ_border_color="#FF000000"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="You will be connect to a random person.\nInteract with them and have fun"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:id="@+id/mini_msg_tv"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="@id/radar_animation"
+        app:layout_constraintEnd_toEndOf="@id/radar_animation"
+        app:layout_constraintTop_toBottomOf="@id/radar_animation"
+        />
+
+    <TextView
+        android:id="@+id/requiredCoins_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/main_activity_tv_drawables"
+        android:drawableRight="@drawable/coin"
+        android:padding="6dp"
+        android:text="Coins: 5 "
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintEnd_toEndOf="@+id/mini_msg_tv"
+        app:layout_constraintStart_toStartOf="@+id/mini_msg_tv"
+        app:layout_constraintTop_toBottomOf="@+id/mini_msg_tv" />
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:id="@+id/connect_btn"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/white"
+        android:text="Connect"
+        app:layout_constraintEnd_toEndOf="@id/mini_msg_tv"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/mini_msg_tv"
+        app:layout_constraintTop_toBottomOf="@id/requiredCoins_tv"
+        app:layout_goneMarginTop="10dp" />
+
+    <TextView
+        android:id="@+id/usersCount_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/main_activity_tv_drawables"
+        android:padding="6dp"
+        android:visibility="gone"
+        android:text="0"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="50dp"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
